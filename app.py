@@ -9,7 +9,6 @@ from linebot.exceptions import (
 )
 from linebot.models import *
 
-
 # ======這裡是呼叫的檔案內容=====
 from message import *
 from new import *
@@ -30,6 +29,11 @@ line_bot_api = LineBotApi(
     'ETBhz7p4T0Dd7JOZD1M8MBTcvDG8VAhmF/pFF+kLDVda4APhxycQehETo3srzKSGXcWLxFf7Cqvokpdu9ECCvCMy1nQv2hy0sQHqjNlXMxxTuAjM29FRT312Gb0EigiUWuJMB8pAsG1DIYYCZZCr9AdB04t89/1O/w1cDnyilFU=')
 # Channel Secret
 handler = WebhookHandler('18b3814d957ed3e9da1ae427752bb4d2')
+
+# line_bot_api = LineBotApi(
+#     'RdcqA1zFQW46wZPlAWsCCadIzsBDVqDUhMKuwS5BIg3LYm9WYQCVswbU9cEJxojwabnPoShW0PWMeBnZSiiu+Fkv3V2Zlzt1lq12TdR/HGvvV/YhRSMXcBjlH22Psr2OzDc6Lx1GCBdP808Jzf47RAdB04t89/1O/w1cDnyilFU=')
+# # Channel Secret
+# handler = WebhookHandler('095144398ba96b6ff76c49352cdf5fb8')
 
 
 # 監聽所有來自 /callback 的 Post Request
@@ -64,7 +68,7 @@ def handle_message(event):
     elif '旋轉木馬' in msg:
         message = Carousel_Template()
         line_bot_api.reply_message(event.reply_token, message)
-    elif '圖片畫廊' in msg:
+    elif '圖片' in msg:
         message = test()
         line_bot_api.reply_message(event.reply_token, message)
     elif '功能列表' in msg:
